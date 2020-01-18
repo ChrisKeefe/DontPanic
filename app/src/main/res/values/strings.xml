@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">DontPanic</string>
+    <string name="dont_panic">Don\'t Panic!</string>
+    <string name="romance_text">Share your geolocation to receive basic safety notifications about real-world hazards near you.</string>
+    <string name="enable_app">Enable App</string>
+    <string name="status">App Enabled: you are sharing your location and receiving notifications</string>
+</resources>
