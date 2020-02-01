@@ -2,6 +2,10 @@ package com.safetyfirst.dontpanic
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.R
+import android.widget.TextView
+
+
 
 class MainActivity : AppCompatActivity() {
 
