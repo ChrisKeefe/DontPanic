@@ -6,7 +6,7 @@ Group Members: Chris Keefe, Mason Rodgers, Brandon Click, Drew Sansom_
 
 ## 1. Introduction
 
-Don’t Panic is a web/mobile application platform organized around preventing accidents by providing timely, geo-targeted warnings. Users opt in to receive push notifications or SMS. Users receive advice when they may be a) approaching a high-risk area or b) entering a high-risk time period. (E.g. weather bulletins, breaking news, seasonal risks) Future work may include suppression of notifications when geolocation data indicates the user is moving at motor-vehicle speeds, creation of opt-in channels for content selection, notification filtering by tag, and API design to allow approved local/regional/national partners to post warnings in real time
+In a world rich with information, there's no reason you should be suprised by an accident in your neighborhood, a rain squall on your walk to work, or a natural disaster approaching your community. Don’t Panic is an application platform designed to prevent accidents by providing timely, geo-targeted warnings, alongside resources to help people navigate the worst of times. Users opt in to receive push notifications or SMS. Users receive advice when they may be a) approaching a high-risk area or b) entering a high-risk time period. (E.g. weather bulletins, breaking news, seasonal risks) Future work may include suppression of notifications when geolocation data indicates the user is moving at motor-vehicle speeds, creation of opt-in channels for content selection, notification filtering by tag, and API design to allow approved local/regional/national partners to post warnings in real time
 
 ## 2. Initial value proposition and consumer segments
 
@@ -40,13 +40,13 @@ Don’t Panic is a free, lightweight application designed to help anyone safely 
 **Key insights**
   - Product description must be accurate
   - Ads better than cost upfront
-  -Simple notification UI with link to app/url
+  - Simple notification UI with link to app/url
 
  **Representative quotes**
   - “I don’t want settings to be buried in the menu”
   - “I want the app to be simple.”
   - “Lack of communication and delay of information prevent me from keeping others safe”
-  -“I want the app to be functional, and needed”
+  - “I want the app to be functional, and needed”
 
  **Hypotheses that were validated**
   - She wanted the app to be as simple as possible
