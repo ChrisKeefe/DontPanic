@@ -50,73 +50,73 @@ Don't Panic is a free, minimal app that lets any American stay informed about th
 
 ### 6.2. Use case descriptions
 
-**Use Case**: Download App
-**Actor**: App User
-**Description**: A smartphone user will download the “DontPanic” app to sign up for the service
-**Preconditions**: They own a smartphone
-**Postconditions**: They have the app, have created an account.
+**Use Case**: Download App   
+**Actor**: App User   
+**Description**: A smartphone user will download the “DontPanic” app to sign up for the service   
+**Preconditions**: They own a smartphone    
+**Postconditions**: They have the app, have created an account.    
 **Main Flow**:
-The actor logs into the Google Play store and downloads “DontPanic”
-After installation, the user opens the app, and follows the steps to create an account
+1. The actor logs into the Google Play store and downloads “DontPanic”  
+2. After installation, the user opens the app, and follows the steps to create an account  
 **Alternative Flow**:
-None.  This is the first step and must go according to plan for the service to work.
+None.  This is the first step and must go according to plan for the service to work.   
 
-**Use Case**: Receive Push Notifications
-**Actor**:  App User
-**Description**: The user will receive emergency notifications on their smartphone
-**Preconditions**: The user has downloaded the “DonPanic” app and created an account
-**Postconditions**: The user is now receiving basic non customized notifications
+**Use Case**: Receive Push Notifications   
+**Actor**:  App User   
+**Description**: The user will receive emergency notifications on their smartphone   
+**Preconditions**: The user has downloaded the “DonPanic” app and created an account   
+**Postconditions**: The user is now receiving basic non customized notifications   
 **Main Flow**:
-After downloading the app, the user gives their phone permissions to send the phone notifications.
+1. After downloading the app, the user gives their phone permissions to send the phone notifications.    
 **Alternative Flow**:
-The user does not give their phone permission to send them notifications.
-They must open their settings, go to the notifications settings page, and then allow the phone to give them notifications.
-If they do not follow step 2, then they will not be able to use the service.  Permission must be given to the phone.
+1. The user does not give their phone permission to send them notifications.   
+2. They must open their settings, go to the notifications settings page, and then allow the phone to give them notifications.  
+3. If they do not follow step 2, then they will not be able to use the service.  Permission must be given to the phone.   
 
-**Use Case**: Sign Up Online
-**Actor**: SMS User
-**Description**: Someone who wants to receive their notifications via SMS can sign up using the web app
-**Preconditions**: They own a phone.
-**Postconditions**: They have created an account.
+**Use Case**: Sign Up Online  
+**Actor**: SMS User  
+**Description**: Someone who wants to receive their notifications via SMS can sign up using the web app  
+**Preconditions**: They own a phone.  
+**Postconditions**: They have created an account.  
 **Main Flow**:
-Actor logs into the DontPanic Website and creates an account
+1. Actor logs into the DontPanic Website and creates an account  
 **Alternative Flow**:
-None, this must be done to start the service
+None, this must be done to start the service  
 
-**Use Case**: Receive SMS Notifications
-**Actor**: SMS User
-**Description**: The SMS User will start to receive SMS emergency notifications
-**Preconditions**: They have signed up for the service using the web app
-**Postconditions**: They will start to receive SMS apps
+**Use Case**: Receive SMS Notifications  
+**Actor**: SMS User   
+**Description**: The SMS User will start to receive SMS emergency notifications   
+**Preconditions**: They have signed up for the service using the web app   
+**Postconditions**: They will start to receive SMS apps  
 **Main Flow**:
-They start to receive emergency notification apps
+1. They start to receive emergency notification apps  
 **Alternative Flow**:
-They are not receiving apps, and must verify the information they entered in their account such as their phone number and ensure it is correct.
+1. They are not receiving apps, and must verify the information they entered in their account such as their phone number and ensure it is correct.  
 
-**Use Case**: Customize Notification Type
-**Actor**: Service User
-**Description**: The user can select they types of emergency notifications they want to receive
-**Preconditions**: The user has either signed up via the “DontPanic” app or the web app
-**Postconditions**: The user is not only receiving notifications, but notifications of their choice.
+**Use Case**: Customize Notification Type  
+**Actor**: Service User  
+**Description**: The user can select they types of emergency notifications they want to receive  
+**Preconditions**: The user has either signed up via the “DontPanic” app or the web app  
+**Postconditions**: The user is not only receiving notifications, but notifications of their choice.  
 **Main Flow**:
-The user logs into the application on their phone
-They open the setting that allows them to select and deselect the types of notifications they want to receive
-They go through the list and customize what notifications they want to receive.
+1. The user logs into the application on their phone  
+2. They open the setting that allows them to select and deselect the types of notifications they want to receive  
+3. They go through the list and customize what notifications they want to receive.  
 **Alternative Flow**:
-The user logs into their account online via the web app.
-They open the setting that allows them to select and deselect the types of notifications they want to receive
-They go through the list and customize what notifications they want to receive.
+1. The user logs into their account online via the web app.  
+2. They open the setting that allows them to select and deselect the types of notifications they want to receive  
+3. They go through the list and customize what notifications they want to receive.  
 **Alternative Flow**:
-The user does not change any settings regarding what kind of information they want to receive, and will continue to receive the default emergency notifications.
+1. The user does not change any settings regarding what kind of information they want to receive, and will continue to receive the default emergency notifications.  
 
-**Use Case**: Stay Informed Of Emergencies
-**Actor**: Service User
-**Description**: The end result: the user receives notifications that help them stay informed of emergencies
-**Preconditions**: The user has either signed up for “DontPanic” via the web app to receive SMS notifications, used the “DontPanic” app to sign up, or both.
-**Postconditions**: The user will be receiving notifications that let them stay informed to emergencies.
+**Use Case**: Stay Informed Of Emergencies  
+**Actor**: Service User  
+**Description**: The end result: the user receives notifications that help them stay informed of emergencies  
+**Preconditions**: The user has either signed up for “DontPanic” via the web app to receive SMS notifications, used the “DontPanic” app to sign up, or both.  
+**Postconditions**: The user will be receiving notifications that let them stay informed to emergencies.  
 **Main Flow**:
-The user receives push notifications, SMS notification, or both.
-They respond to the information as they desire
+1. The user receives push notifications, SMS notification, or both.  
+2. They respond to the information as they desire  
 **Alternative Flow**:
 None.
 
@@ -155,4 +155,4 @@ Priority: 8
 Estimated Hours:  5
 
 ## 8. Trello
-![](https://lh3.googleusercontent.com/kwG0HuVmbXngqnOajZmB8ZhF35BTiNIQb4JsGYFGPn_aTiEg-5nzHJCBt9TzxJgIqHmjbIeuYKSm-W_XCq6JaG5vD78GnsfzYYCNDv11E5wdxZwl7ALdv1kzZpJmKojW7hjYnCWV)
+**![](https://lh3.googleusercontent.com/kwG0HuVmbXngqnOajZmB8ZhF35BTiNIQb4JsGYFGPn_aTiEg-5nzHJCBt9TzxJgIqHmjbIeuYKSm-W_XCq6JaG5vD78GnsfzYYCNDv11E5wdxZwl7ALdv1kzZpJmKojW7hjYnCWV)**
