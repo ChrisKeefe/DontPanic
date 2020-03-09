@@ -67,7 +67,7 @@ For each class, include an explanation about its responsibility and why you incl
 
 * Because the Message Class is data, we need something to get the message and deliver it to the user.
 
-* The Controller will help make the decisions. On which messages to recieve for the user, and will help keep messages relevant to preferences through keywords/tiers that are associated with Message Class.
+* The Controller will help make the decisions about which messages to receive for the user, and will help keep messages relevant to preferences through keywords/tiers that are associated with Message Class.
 
 
 
