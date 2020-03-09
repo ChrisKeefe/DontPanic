@@ -76,6 +76,7 @@ For each class, include an explanation about its responsibility and why you incl
 * The Messages Class describes message content, message resources, and message tier/keyword information.
 
 
-* Since each user can customize the kinds of messages they receive, a Message Class needed to be included to that a message can be tailored to their given preferences.
+* Since each user can customize the kinds of messages they receive, a Message Class needed to be included, to allow message classification, so that messages are only sent which meet given preferences.
+
 
 * Message class objects support system requirements by allowing customization of messages delivered given user preferences.
