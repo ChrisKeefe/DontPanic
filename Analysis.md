@@ -78,4 +78,4 @@ For each class, include an explanation about its responsibility and why you incl
 
 * Since each user can customize the kinds of messages they receive, a Message Class needed to be included to that a message can be tailored to their given preferences.
 
-* It meets the system requirements by crafting the message the user wants to receive given their chosen preferences.
+* Message class objects support system requirements by allowing customization of messages delivered given user preferences.
