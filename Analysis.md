@@ -34,7 +34,8 @@ For each class, include an explanation about its responsibility and why you incl
 
 **User**
 
-* The User Class is responsible for keeping track of a given user's information with regards to how the backend will send them information.
+* The User Class is responsible for keeping track of a given user's personal information, including contact and authentication data
+
 
 * It is included because it allows the necessary information pertaining to delivery information and account information to be stored in a single class, and managed easily from the backend.
 
