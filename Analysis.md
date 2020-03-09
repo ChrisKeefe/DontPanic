@@ -73,7 +73,8 @@ For each class, include an explanation about its responsibility and why you incl
 
 **Messages**
 
-* The Messages Class helps keep track of how messages are created, and the content in them.
+* The Messages Class describes message content, message resources, and message tier/keyword information.
+
 
 * Since each user can customize the kinds of messages they receive, a Message Class needed to be included to that a message can be tailored to their given preferences.
 
