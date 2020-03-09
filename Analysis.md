@@ -38,7 +38,8 @@ For each class, include an explanation about its responsibility and why you incl
 
 * It is included because it allows the necessary information pertaining to delivery information and account information to be stored in a single class, and managed easily from the backend.
 
-* It helps meet the system requirements because it stores how the user will receive their information.
+* It helps meet the system requirements because it enables personalization of message content and delivery method
+
 
 
 
