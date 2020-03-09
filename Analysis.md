@@ -63,7 +63,7 @@ For each class, include an explanation about its responsibility and why you incl
 
 **Controller**
 
-* The Controller is what will functionally get the messages the user will receive. It does not store any data, but grabs the messages, which has the data needed.
+* The Controller is responsible for accessing user Profile and Location information, and selecting which message(s) to send at a given time based on that data.
 
 * Because the Message Class is data, we need something to get the message and deliver it to the user.
 
