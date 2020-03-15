@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "777144621825",
+    "firebase_url": "https://dontpanicfbase.firebaseio.com",
+    "project_id": "dontpanicfbase",
+    "storage_bucket": "dontpanicfbase.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:777144621825:android:438e6f54c743d94b731900",
+        "android_client_info": {
+          "package_name": "com.safetyfirst.dontpanic"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "777144621825-rtmu3v46ib3uhsiuur6i7801tpu01jbu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.safetyfirst.dontpanic",
+            "certificate_hash": "b87061f729447e7de5695b9576efe5f9b5bac840"
+          }
+        },
+        {
+          "client_id": "777144621825-l79m5fudrkcvqlssu05vcrgbv4k4sgoi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBwv2EaVEqqkY4mn-ffqT6RVz4x5M7vOIw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "777144621825-l79m5fudrkcvqlssu05vcrgbv4k4sgoi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
