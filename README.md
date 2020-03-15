@@ -7,5 +7,4 @@ Don't Panic is currently a closed team project in the early stages of developmen
 ## Development setup
 
 Don't Panic use client-side and server-side infrastructure, both of which will be managed via this repository.
-Mobile development in Java/Kotlin, using Android Studio. Server-side code in Python.
-
+Mobile development in Java, using Android Studio. "Server-side" code built with node.js and Google Cloud Functions.
