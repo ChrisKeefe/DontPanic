@@ -96,7 +96,8 @@ Besides the Readme.md file, your repository should contain a CONTRIBUTING.md
 file, a LICENSE file, and a CODE_OF_CONDUCT.md file. Search online for some
 examples of these files. In this section of the deliverable, put links to these files on GitHub.**
 
-[https://github.com/ChrisKeefe/DontPanic/blob/master/README.md](https://github.com/ChrisKeefe/DontPanic/blob/master/README.md)
+- [README.md](https://github.com/ChrisKeefe/DontPanic/blob/master/README.md)
+
 [https://github.com/ChrisKeefe/DontPanic/blob/master/CONTRIBUTING.md](https://github.com/ChrisKeefe/DontPanic/blob/master/CONTRIBUTING.md)
 [https://github.com/ChrisKeefe/DontPanic/blob/master/CODE_OF_CONDUCT.md](https://github.com/ChrisKeefe/DontPanic/blob/master/CODE_OF_CONDUCT.md)
 - [LICENSE](https://github.com/ChrisKeefe/DontPanic/blob/master/LICENSE)
