@@ -81,7 +81,8 @@ accordingly) and why you adopted this license. For more information, check [http
 
 **MIT License**
 
-[https://choosealicense.com/licenses/mit/](https://choosealicense.com/licenses/mit/)
+- [MIT license overview](https://choosealicense.com/licenses/mit/)
+
 [https://github.com/ChrisKeefe/DontPanic/blob/master/LICENSE](https://github.com/ChrisKeefe/DontPanic/blob/master/LICENSE)
 
 We chose a MIT license so people can do almost anything they want with our project, like making and distributing closed source versions. We want our project to be as accessible as possible for people who want to work on it
