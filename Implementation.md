@@ -98,7 +98,8 @@ examples of these files. In this section of the deliverable, put links to these 
 [https://github.com/ChrisKeefe/DontPanic/blob/master/README.md](https://github.com/ChrisKeefe/DontPanic/blob/master/README.md)
 [https://github.com/ChrisKeefe/DontPanic/blob/master/CONTRIBUTING.md](https://github.com/ChrisKeefe/DontPanic/blob/master/CONTRIBUTING.md)
 [https://github.com/ChrisKeefe/DontPanic/blob/master/CODE_OF_CONDUCT.md](https://github.com/ChrisKeefe/DontPanic/blob/master/CODE_OF_CONDUCT.md)
-[https://github.com/ChrisKeefe/DontPanic/blob/master/LICENSE](https://github.com/ChrisKeefe/DontPanic/blob/master/LICENSE)
+- [LICENSE](https://github.com/ChrisKeefe/DontPanic/blob/master/LICENSE)
+
 
 ### 8. Look & feel
 
