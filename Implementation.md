@@ -100,7 +100,8 @@ examples of these files. In this section of the deliverable, put links to these 
 
 - [CONTRIBUTING.md](https://github.com/ChrisKeefe/DontPanic/blob/master/CONTRIBUTING.md)
 
-[https://github.com/ChrisKeefe/DontPanic/blob/master/CODE_OF_CONDUCT.md](https://github.com/ChrisKeefe/DontPanic/blob/master/CODE_OF_CONDUCT.md)
+- [CODE_OF_CONDUCT.md](https://github.com/ChrisKeefe/DontPanic/blob/master/CODE_OF_CONDUCT.md)
+
 - [LICENSE](https://github.com/ChrisKeefe/DontPanic/blob/master/LICENSE)
 
 
