@@ -2,7 +2,7 @@
 Share your geolocation to receive basic safety notifications about real-world hazards near you
 
 ## Status
-Don't Panic is currently a closed team project in the early stages of development. We hope to position the application for public contribution in future.
+Don't Panic is currently in the early stages of development. Please see our [contributing](https://github.com/ChrisKeefe/DontPanic/blob/master/CONTRIBUTING.md) guide if you're interested in getting involved.
 
 ## Development setup
 
