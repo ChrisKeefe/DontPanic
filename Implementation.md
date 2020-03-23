@@ -98,7 +98,8 @@ examples of these files. In this section of the deliverable, put links to these 
 
 - [README.md](https://github.com/ChrisKeefe/DontPanic/blob/master/README.md)
 
-[https://github.com/ChrisKeefe/DontPanic/blob/master/CONTRIBUTING.md](https://github.com/ChrisKeefe/DontPanic/blob/master/CONTRIBUTING.md)
+- [CONTRIBUTING.md](https://github.com/ChrisKeefe/DontPanic/blob/master/CONTRIBUTING.md)
+
 [https://github.com/ChrisKeefe/DontPanic/blob/master/CODE_OF_CONDUCT.md](https://github.com/ChrisKeefe/DontPanic/blob/master/CODE_OF_CONDUCT.md)
 - [LICENSE](https://github.com/ChrisKeefe/DontPanic/blob/master/LICENSE)
 
