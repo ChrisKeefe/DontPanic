@@ -1,14 +1,14 @@
 # Don't Panic
-Share your geolocation to receive basic safety notifications about real-world hazards near you. Don't Panic is a simple, lightweight notifications platform, offering users geo-targeted and personalized notifications helping them navigate real-world challenges.
+Don't Panic is a simple, lightweight notifications platform, offering users geo-targeted and personalized notifications helping them navigate real-world challenges.
 
 ## Status
-Don't Panic is currently in the early stages of development. Please see our [contributing](https://github.com/ChrisKeefe/DontPanic/blob/master/CONTRIBUTING.md) guide if you're interested in getting involved.
+Don't Panic is currently in the early stages of development. Please see our [contributing](CONTRIBUTING.md) guide if you're interested in getting involved.
 
 ## Development setup
 
 Don't Panic uses a Google Firebase stack, including Firestore, Cloud Messenger, and Cloud Functions in place of server-side infrastructure. All client-side code (Android App and Web) will be managed via this repository, while server-side infrastructure will remain private. 
 
-Mobile development is beoing done in Java, using Android Studio. "Server-side" code built with node.js and Google Cloud Functions.
+Mobile development is being done in Java, using Android Studio. "Server-side" code built with node.js and Google Cloud Functions.
 
 
 ## Getting Started
