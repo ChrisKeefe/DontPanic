@@ -34,6 +34,6 @@ Violations of the Standards for Behavior, any form or harassment, or any other b
 Complaints will be examined and a response will be delivered in a timely manner that may or may not include actions that will be taken.
 
 ## Attribution  
-This Code of Conduct was based upon the template provided by [Contributor Covenant][homepage],
+This Code of Conduct was based upon the template provided by Contributor Covenant,
 version 2.0, available at
 https://www.contributor-covenant.org/version/2/0/code_of_conduct.html.
