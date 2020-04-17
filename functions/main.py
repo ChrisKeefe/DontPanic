@@ -45,11 +45,13 @@ def hello_http(request):
         name = 'World'
     return 'Hello {}!'.format(escape(name))
 
+
 # we can use publishers and subscribers to chain multiple cloud functions
 # e.g. a function runs then publishes to a channel monitored by other functions
 # which run in turn
 # see: https://cloud.google.com/functions/docs/calling/pubsub
 # and: https://cloud.google.com/functions/docs/tutorials/pubsub
+
 
 def hello_pubsub(event, context):
     """Background Cloud Function to be triggered by Pub/Sub.
@@ -71,3 +73,27 @@ def hello_pubsub(event, context):
     else:
         name = 'World'
     print('Hello {}!'.format(name))
+
+
+# ################### Begin actual Don't Panic code ############################
+
+
+def add_from_dict(request):
+    db = firestore.Client()
+    data = {
+        u'name': u'Los Angeles',
+        u'state': u'CA',
+        u'country': u'USA'
+    }
+
+    # Add a new doc in collection 'cities' with ID 'LA'
+    db.collection(u'cities').document(u'LA').set(data)
+
+
+# TODO: Mason - create a function that sends a simple text message to our app
+
+# TODO: create a function that listens to the firestore db and
+# modifies the LA document once it's been created
+
+# TODO: create a function that listens to the firestore db
+# and calls add_from_dict with data so that it creates a new document for NYC
