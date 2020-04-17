@@ -1,0 +1,18 @@
+# deployment:
+gcloud functions deploy <FUNCTION_NAME> --runtime python37 --trigger-http --allow-unauthenticated
+
+# retrieve initial f(x) description, including URL
+gcloud functions describe hello_http
+
+# get function-call log in terminal
+gcloud functions logs read hello_http
+
+
+Python:
+(hello_world): https://us-central1-dontpanicfbase.cloudfunctions.net/hello_world
+(hello_http): https://us-central1-dontpanicfbase.cloudfunctions.net/hello_http
+
+JS:
+(helloWorld): https://us-central1-dontpanicfbase.cloudfunctions.net/helloWorld
+(sendMessage): https://us-central1-dontpanicfbase.cloudfunctions.net/sendMessage
+(pushSender): https://us-central1-dontpanicfbase.cloudfunctions.net/pushSender
