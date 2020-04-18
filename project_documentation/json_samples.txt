@@ -1,0 +1,48 @@
+######### calling a POST message from cli:
+curl -i -X POST -H 'Content-type: application/json' -d '{"message":"Some POST message"}' https://us-central1-dontpanicfbase.cloudfunctions.net/hello_world
+
+
+########## JSON Validator: 
+https://jsonformatter.curiousconcept.com/
+
+######### Sample JSON strings:
+    Working in hello_world():
+    {"message":"John da bum"}
+    {"message":"Some POST message"}
+
+######### Working in create_Message():
+{"messagePayload":{"messageContent":"Kilroy was here","category":"test","urgency":"99","resourceURL":"http://endless.horse/","tags":["thing","thang","thunk"]}}
+
+{
+  "messagePayload":{
+    "messageContent":"Kilroy was here",
+    "category":"test",
+    "urgency":"99",
+    "resourceURL":"http://endless.horse/",
+    "tags":[
+      "thing",
+      "thang",
+      "thunk"
+    ]
+  }
+}
+
+
+
+######## testing in create_profile():
+{
+  "profilePayload":{
+    "userID":"777",
+    "receiveSMSflag":"0",
+    "receivePushFlag":"1",
+    "messageFrequency":"1",
+    "isProfileActive":"1",
+    "preferredTags":[
+      "foo",
+      "bar",
+      "baz"
+    ]
+  }
+}
+
+{"profilePayload":{"userID":"777","receiveSMSflag":"0","receivePushFlag":"1","messageFrequency":"1","isProfileActive":"1","preferredTags":["foo","bar","baz"]}}
