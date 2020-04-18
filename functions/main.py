@@ -1,81 +1,8 @@
 from google.cloud import firestore
 from flask import escape
 
+# ################### Public-Facing API functions ###########################
 
-def hello_world(request):
-    """Responds to any HTTP request.
-    Args:
-        request (flask.Request): HTTP request object.
-    Returns:
-        The response text or any set of values that can be turned into a
-        Response object using
-        `make_response <http://flask.pocoo.org/docs/1.0/api/#flask.Flask.make_response>`.
-    Usage: passing a message as follows will display that message
-    https://GCP_REGION-PROJECT_ID.cloudfunctions.net/hello_http?message=<some message text>
-    """
-    request_json = request.get_json()
-    if request.args and 'message' in request.args:
-        return request.args.get('message')
-    elif request_json and 'message' in request_json:
-        return request_json['message']
-    else:
-        return f'Hello World!'
-
-
-def hello_http(request):
-    """HTTP Cloud Function.
-    Args:
-        request (flask.Request): The request object.
-        <http://flask.pocoo.org/docs/1.0/api/#flask.Request>
-    Returns:
-        The response text, or any set of values that can be turned into a
-        Response object using `make_response`
-        <http://flask.pocoo.org/docs/1.0/api/#flask.Flask.make_response>.
-    Usage: passing a name as follows will yield Hello Name!
-    https://GCP_REGION-PROJECT_ID.cloudfunctions.net/hello_http?name=NAME
-    """
-    request_json = request.get_json(silent=True)
-    request_args = request.args
-
-    if request_json and 'name' in request_json:
-        name = request_json['name']
-    elif request_args and 'name' in request_args:
-        name = request_args['name']
-    else:
-        name = 'World'
-    return 'Hello {}!'.format(escape(name))
-
-
-# we can use publishers and subscribers to chain multiple cloud functions
-# e.g. a function runs then publishes to a channel monitored by other functions
-# which run in turn
-# see: https://cloud.google.com/functions/docs/calling/pubsub
-# and: https://cloud.google.com/functions/docs/tutorials/pubsub
-
-
-def hello_pubsub(event, context):
-    """Background Cloud Function to be triggered by Pub/Sub.
-    Args:
-         event (dict):  The dictionary with data specific to this type of
-         event. The `data` field contains the PubsubMessage message. The
-         `attributes` field will contain custom attributes if there are any.
-         context (google.cloud.functions.Context): The Cloud Functions event
-         metadata. The `event_id` field contains the Pub/Sub message ID. The
-         `timestamp` field contains the publish time.
-    """
-    import base64
-
-    print("""This Function was triggered by messageId {} published at {}
-    """.format(context.event_id, context.timestamp))
-
-    if 'data' in event:
-        name = base64.b64decode(event['data']).decode('utf-8')
-    else:
-        name = 'World'
-    print('Hello {}!'.format(name))
-
-
-# ################### Begin actual Don't Panic code ###########################
 
 def create_message(request):
     """ Adds a new Message document to the messages collection in firestore
@@ -131,7 +58,7 @@ def create_message(request):
 
 def create_profile(request):
     """ Adds a new Profile document to the profiles collection in firestore
-    Preconditions: Must have a user ID and other profile data delivered by as a 
+    Preconditions: Must have a user ID and other profile data delivered by as a
     POST request of content-type 'application/json', with format:
         {
           "profilePayload":{
@@ -185,7 +112,7 @@ def create_profile(request):
     db.collection(u'profiles').document(str(profile_ID)).set(data)
 
 
-# ############################################################################
+# ####################### TO-DO List ######################################
 # TODO: Updating messages or profiles will require us to get the record,
 # get existing tags, set() those tags, add the new ones, and then create the
 # record passing the recordID explicitly
@@ -197,3 +124,63 @@ def create_profile(request):
 
 # TODO: create a function that listens to the firestore db
 # and calls add_from_dict with data so that it creates a new document for NYC
+
+
+# ##################### SAMPLE FUNCTIONS ####################################
+# HTTP functions like this must have (request) as a parameter, as they are
+# triggered by HTTP get/post/etc requests. In this example, the branching logic
+# allows this function to handle JSON inputs through POST, GET requests that
+# that offer a "name" argument, and requests with no argument
+
+
+def hello_http(request):
+    """HTTP Cloud Function.
+    Args:
+        request (flask.Request): The request object.
+        <http://flask.pocoo.org/docs/1.0/api/#flask.Request>
+    Returns:
+        The response text, or any set of values that can be turned into a
+        Response object using `make_response`
+        <http://flask.pocoo.org/docs/1.0/api/#flask.Flask.make_response>.
+    Usage: passing a name as follows will yield Hello Name!
+    https://GCP_REGION-PROJECT_ID.cloudfunctions.net/hello_http?name=NAME
+    """
+    request_json = request.get_json(silent=True)
+    request_args = request.args
+
+    if request_json and 'name' in request_json:
+        name = request_json['name']
+    elif request_args and 'name' in request_args:
+        name = request_args['name']
+    else:
+        name = 'World'
+    return 'Hello {}!'.format(escape(name))
+
+
+# we can use publishers and subscribers to chain multiple cloud functions
+# e.g. one function publishes to a channel. other functions which subscribe to
+# that channel run in turn
+# see: https://cloud.google.com/functions/docs/calling/pubsub
+# and: https://cloud.google.com/functions/docs/tutorials/pubsub
+
+
+def hello_pubsub(event, context):
+    """Background Cloud Function to be triggered by Pub/Sub.
+    Args:
+         event (dict):  The dictionary with data specific to this type of
+         event. The `data` field contains the PubsubMessage message. The
+         `attributes` field will contain custom attributes if there are any.
+         context (google.cloud.functions.Context): The Cloud Functions event
+         metadata. The `event_id` field contains the Pub/Sub message ID. The
+         `timestamp` field contains the publish time.
+    """
+    import base64
+
+    print("""This Function was triggered by messageId {} published at {}
+    """.format(context.event_id, context.timestamp))
+
+    if 'data' in event:
+        name = base64.b64decode(event['data']).decode('utf-8')
+    else:
+        name = 'World'
+    print('Hello {}!'.format(name))
