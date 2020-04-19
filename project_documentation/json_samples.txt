@@ -29,7 +29,7 @@ https://jsonformatter.curiousconcept.com/
 
 
 
-######## testing in create_profile():
+######## working in create_profile():
 {
   "profilePayload":{
     "userID":"777",
@@ -46,3 +46,19 @@ https://jsonformatter.curiousconcept.com/
 }
 
 {"profilePayload":{"userID":"777","receiveSMSflag":"0","receivePushFlag":"1","messageFrequency":"1","isProfileActive":"1","preferredTags":["foo","bar","baz"]}}
+
+
+########## working in create_user():
+{
+  "messagePayload":{
+    "userID":"c2AgcDSh0fc:APA91bHu02",
+    "userName":"Don Giovanni",
+    "phoneNum":"8675309",
+    "profiles":[
+      "profileID1",
+      "profileID2"
+    ]
+  }
+}
+
+{"messagePayload":{"userID":"c2AgcDSh0fc:APA91bHu02","userName":"Don Giovanni","phoneNum":"8675309","profiles":["profileID1","profileID2"]}}

@@ -1,4 +1,5 @@
 from google.cloud import firestore
+from firebase_admin import messaging
 from flask import escape
 
 # ################### Public-Facing API functions ###########################
@@ -77,6 +78,7 @@ def create_profile(request):
             }
           }
     Postconditions: uniquely identified db document written to firestore
+    TODO: add user device ID
     TODO: add a message scheduler to this
     TODO: sanitize inputs
     """
@@ -134,6 +136,7 @@ def create_user(request):
             }
           }
     Postconditions: uniquely identified db document written to firestore
+    TODO: get existing user profiles, append them to this req for idempotence
     """
     db = firestore.Client()
 
@@ -160,6 +163,27 @@ def create_user(request):
     }
     # Add a new doc in collection 'users' with userID as doc name
     db.collection(u'users').document(str(userID)).set(data)
+
+
+def send_message_to_one_user(request):
+    # This registration token comes from the client FCM SDKs.
+    registration_token = 'd5ITFKJ6Tm6KvoaIJ8IVQf:APA91bFizkGRIeA3OGKNHS6LK3nhTllG46voqXR0NtBtXlGvV6AAkZZMwkgqW7ZrXHBxORLzTBZRWRoFJ17ciLBU_AWoWRY2AoNlgcwSXQwR64BIcEjYrgG4eV5c16ksz-p8sGBqxM6v'
+
+    # See documentation on defining a message payload.
+    message = messaging.Message(
+        notification={
+            'title': 'A message...',
+            'body': 'Wooohoooooo!',
+        },
+        token=registration_token,
+    )
+
+    # Send a message to the device corresponding to the provided
+    # registration token.
+    response = messaging.send(message)
+    # Response is a message ID string.
+    print('Successfully sent message:', response)
+
 
 
 # ####################### TO-DO List ######################################
