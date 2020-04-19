@@ -13,7 +13,6 @@ Python:
 (create_profile): https://us-central1-dontpanicfbase.cloudfunctions.net/create_profile
 (create_user): https://us-central1-dontpanicfbase.cloudfunctions.net/create_user
 (add_from_dict): https://us-central1-dontpanicfbase.cloudfunctions.net/add_from_dict
-(hello_world): https://us-central1-dontpanicfbase.cloudfunctions.net/hello_world
 (hello_http): https://us-central1-dontpanicfbase.cloudfunctions.net/hello_http
 
 JS:
