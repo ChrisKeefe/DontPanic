@@ -59,6 +59,55 @@ def create_message(request):
     db.collection(u'messages').document(str(message_ID)).set(data)
 
 
+def get_messages(request):
+    """ Adds a new Profile document to the profiles collection in firestore
+    Preconditions: Must have a user ID and other profile data delivered by as a
+    POST request of content-type 'application/json', with format:
+        {
+          "profilePayload":{
+              "userID":"INT",
+              "receiveSMSflag":"BOOL",
+              "receivePushFlag":"BOOL",
+              "messageFrequency":"INT",
+              "isProfileActive":"BOOL",
+              "preferredTags":[
+              "STR1",
+              "STR2",
+              "STRn"
+              ]
+            }
+          }
+    Postconditions: uniquely identified db document written to firestore
+    TODO: add user device ID
+    TODO: add a message scheduler to this
+    TODO: sanitize inputs
+    """
+    db = firestore.Client()
+
+    # docs = db.collection(u'messages').where(
+    #       u'category', u'==', 'test').stream()
+
+    # for doc in docs:
+    #     print(u'{} => {}'.format(doc.id, doc.to_dict()))
+
+    doc_ref = db.collection(u'messages').document(u'testMessage1')
+
+    doc = doc_ref.get()
+    if doc.exists:
+        print(u'Document data: {}'.format(doc.to_dict()))
+    else:
+        print(u'No such document!')
+
+    return doc.toString()
+
+# end of get_message method
+
+
+def request_test(request):
+    print("Does this work?")
+    return "Hi"
+
+
 def create_profile(request):
     """ Adds a new Profile document to the profiles collection in firestore
     Preconditions: Must have a user ID and other profile data delivered by as a
