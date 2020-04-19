@@ -35,6 +35,8 @@ def create_message(request):
         payload = request_json['messagePayload']
     elif request_args and 'messagePayload' in request_args:
         payload = request_args['messagePayload']
+    else:
+        return "Failure: invalid payload"
 
     messageContent = payload['messageContent']
     resourceURL = payload['resourceURL']
@@ -89,6 +91,8 @@ def create_profile(request):
         payload = request_json['profilePayload']
     elif request_args and 'profilePayload' in request_args:
         payload = request_args['profilePayload']
+    else:
+        return "Failure: invalid payload"
 
     userID = payload['userID']
     receiveSMSflag = payload['receiveSMSflag']
@@ -110,6 +114,52 @@ def create_profile(request):
     profile_ID = uuid.uuid4()
     # Add a new doc in collection 'messages' with randomly-generated ID
     db.collection(u'profiles').document(str(profile_ID)).set(data)
+
+
+def create_user(request):
+    """ Adds/updates a User document to the messages collection in firestore
+    Used to keep device tokens up-to-date
+    Preconditions: receives a POST request of content-type 'application/json'
+        format:
+        {
+          "messagePayload":{
+              "userID":"STR",
+              "userName":"STR",
+              "phoneNum":"INT",
+              "profiles":[
+              "profileID1",
+              "profileID2",
+              "profileIDn"
+              ]
+            }
+          }
+    Postconditions: uniquely identified db document written to firestore
+    """
+    db = firestore.Client()
+
+    # get_json gets a json object if exists, else returns None
+    request_json = request.get_json(silent=True)
+    # args is a multidict, which can be indexed like request_args[key]
+    request_args = request.args
+    if request_json and 'messagePayload' in request_json:
+        payload = request_json['messagePayload']
+    elif request_args and 'messagePayload' in request_args:
+        payload = request_args['messagePayload']
+    else:
+        return "Failure: invalid payload"
+
+    userID = payload['userID']
+    userName = payload['userName']
+    phoneNum = payload['phoneNum']
+    profiles = payload['profiles']
+
+    data = {
+        u'userName': str(userName),
+        u'phoneNum': str(phoneNum),
+        u'profiles': profiles,
+    }
+    # Add a new doc in collection 'users' with userID as doc name
+    db.collection(u'users').document(str(userID)).set(data)
 
 
 # ####################### TO-DO List ######################################
