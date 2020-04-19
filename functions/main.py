@@ -1,4 +1,5 @@
 from google.cloud import firestore
+from firebase_admin import messaging
 from flask import escape
 
 # ################### Public-Facing API functions ###########################
@@ -35,6 +36,8 @@ def create_message(request):
         payload = request_json['messagePayload']
     elif request_args and 'messagePayload' in request_args:
         payload = request_args['messagePayload']
+    else:
+        return "Failure: invalid payload"
 
     messageContent = payload['messageContent']
     resourceURL = payload['resourceURL']
@@ -75,6 +78,7 @@ def create_profile(request):
             }
           }
     Postconditions: uniquely identified db document written to firestore
+    TODO: add user device ID
     TODO: add a message scheduler to this
     TODO: sanitize inputs
     """
@@ -89,6 +93,8 @@ def create_profile(request):
         payload = request_json['profilePayload']
     elif request_args and 'profilePayload' in request_args:
         payload = request_args['profilePayload']
+    else:
+        return "Failure: invalid payload"
 
     userID = payload['userID']
     receiveSMSflag = payload['receiveSMSflag']
@@ -110,6 +116,74 @@ def create_profile(request):
     profile_ID = uuid.uuid4()
     # Add a new doc in collection 'messages' with randomly-generated ID
     db.collection(u'profiles').document(str(profile_ID)).set(data)
+
+
+def create_user(request):
+    """ Adds/updates a User document to the messages collection in firestore
+    Used to keep device tokens up-to-date
+    Preconditions: receives a POST request of content-type 'application/json'
+        format:
+        {
+          "messagePayload":{
+              "userID":"STR",
+              "userName":"STR",
+              "phoneNum":"INT",
+              "profiles":[
+              "profileID1",
+              "profileID2",
+              "profileIDn"
+              ]
+            }
+          }
+    Postconditions: uniquely identified db document written to firestore
+    TODO: get existing user profiles, append them to this req for idempotence
+    """
+    db = firestore.Client()
+
+    # get_json gets a json object if exists, else returns None
+    request_json = request.get_json(silent=True)
+    # args is a multidict, which can be indexed like request_args[key]
+    request_args = request.args
+    if request_json and 'messagePayload' in request_json:
+        payload = request_json['messagePayload']
+    elif request_args and 'messagePayload' in request_args:
+        payload = request_args['messagePayload']
+    else:
+        return "Failure: invalid payload"
+
+    userID = payload['userID']
+    userName = payload['userName']
+    phoneNum = payload['phoneNum']
+    profiles = payload['profiles']
+
+    data = {
+        u'userName': str(userName),
+        u'phoneNum': str(phoneNum),
+        u'profiles': profiles,
+    }
+    # Add a new doc in collection 'users' with userID as doc name
+    db.collection(u'users').document(str(userID)).set(data)
+
+
+def send_message_to_one_user(request):
+    # This registration token comes from the client FCM SDKs.
+    registration_token = 'd5ITFKJ6Tm6KvoaIJ8IVQf:APA91bFizkGRIeA3OGKNHS6LK3nhTllG46voqXR0NtBtXlGvV6AAkZZMwkgqW7ZrXHBxORLzTBZRWRoFJ17ciLBU_AWoWRY2AoNlgcwSXQwR64BIcEjYrgG4eV5c16ksz-p8sGBqxM6v'
+
+    # See documentation on defining a message payload.
+    message = messaging.Message(
+        notification={
+            'title': 'A message...',
+            'body': 'Wooohoooooo!',
+        },
+        token=registration_token,
+    )
+
+    # Send a message to the device corresponding to the provided
+    # registration token.
+    response = messaging.send(message)
+    # Response is a message ID string.
+    print('Successfully sent message:', response)
+
 
 
 # ####################### TO-DO List ######################################
