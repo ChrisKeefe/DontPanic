@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity() {
 
                 // Log and toast
                 val msg =  token
-
+                println("***************: " + msg)
                 //UnComment out if you need the token ID for testing
 //                TODO: Comment out in production code
                 Toast.makeText(baseContext, msg, Toast.LENGTH_LONG).show()
