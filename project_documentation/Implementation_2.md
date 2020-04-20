@@ -1,3 +1,14 @@
+- [1. Description](#1-description)
+- [2. Implemented Requirements](#2-implemented-requirements)
+  * [Admin Creates a New Message in DB Using the CreateMessageAPI](#admin-creates-a-new-message-in-db-using-the-createmessageapi)
+  * [Admin Creates a New Profile in DB Using the ProfileManagerAPI](#admin-creates-a-new-profile-in-db-using-the-profilemanagerapi)
+  * [Admin Creates a New User in DB Using the CreateUserAPI](#admin-creates-a-new-user-in-db-using-the-createuserapi)
+  * [Admin Creates Message in DB Using a Webform](#admin-creates-message-in-db-using-a-webform)
+  * [User Creates Profile Using Android GUI to Customize their Message Preferences](#user-creates-profile-using-android-gui-to-customize-their-message-preferences)
+- [3. Demo](#3-demo)
+- [4. Code Quality](#4-code-quality)
+- [5. Lessons Learned](#5-lessons-learned)
+
 # 1. Description
 Don't Panic is a free, minimal app that lets any American stay informed about the pitfalls in your life in a way you care about. Users download Don’t Panic on their mobile devices, or sign up through the web application, and receive timely, geo-targeted notifications warning them about environmental or community risks, and helping them navigate them successfully.  
 
@@ -5,7 +16,8 @@ Don’t Panic is still in early development. A basic Android app GUI allows user
 
 Our Android will be available to select users/developers for alpha testing soon. The app will offer a simple user interface, the ability to quickly activate/deactivate it, and the ability to personalize the information we receive from the app. User profiles allow us to control message timing, preferred types of content, and preferred message type. Ease of use is key for Don’t Panic users: simple design that’s easy for everyone to understand, and a set-it-and-forget-it approach that ensures Don’t Panic never gets in your way.  
 
-[Project Trello Board](https://trello.com/b/91yjEezy/dont-panic)
+[Project Trello Board](https://trello.com/b/91yjEezy/dont-panic)  
+[Github Repo](https://github.com/ChrisKeefe/DontPanic)
 
 # 2. Implemented Requirements  
 Collectively, team members put roughly 85 man-hours into this week’s deliverable.
