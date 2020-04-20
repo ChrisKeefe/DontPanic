@@ -1,16 +1,16 @@
 package com.safetyfirst.dontpanic
 
 import android.os.Bundle
-import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.iid.FirebaseInstanceId
-import com.safetyfirst.dontpanic.MyFirebaseMessagingService
+import android.content.Intent
+import android.view.View
+import android.widget.Button
 
 
 class MainActivity : AppCompatActivity() {
-    private val TAG = "MyFirebaseMsgService"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,27 +29,19 @@ class MainActivity : AppCompatActivity() {
                 val msg =  token
 
                 //UnComment out if you need the token ID for testing
-//                TODO: Comment out in production code
-                Toast.makeText(baseContext, msg, Toast.LENGTH_LONG).show()
+                //Toast.makeText(baseContext, msg, Toast.LENGTH_LONG).show()
             })
-
-//        FirebaseInstanceId.getInstance().instanceId
-//            .addOnCompleteListener(OnCompleteListener { task ->
-//                if (!task.isSuccessful) {
-//                    Log.w(TAG, "getInstanceId failed", task.exception)
-//                    return@OnCompleteListener
-//                }
-//
-//                // Get new Instance ID token
-//                val token = task.result?.token
-//
-//                // Log and toast
-//                val msg = getString(R.string.msg_token_fmt, token)
-//                Log.d(TAG, msg)
-//                Toast.makeText(baseContext, msg, Toast.LENGTH_SHORT).show()
-//            })
 
     }
 
+    fun openProfileActivity(view: View){
+        val intent = Intent(this, createProfile::class.java)
+        startActivity(intent);
+    }
+
+    fun openAboutActivity(view: View){
+        val intent = Intent(this, openAboutActivity::class.java)
+        startActivity(intent);
+    }
 
 }
