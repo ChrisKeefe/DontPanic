@@ -5,7 +5,7 @@ Don’t Panic is still in early development. A basic Android app GUI allows user
 
 Our Android will be available to select users/developers for alpha testing soon. The app will offer a simple user interface, the ability to quickly activate/deactivate it, and the ability to personalize the information we receive from the app. User profiles allow us to control message timing, preferred types of content, and preferred message type. Ease of use is key for Don’t Panic users: simple design that’s easy for everyone to understand, and a set-it-and-forget-it approach that ensures Don’t Panic never gets in your way.  
 
-[Project Trello Board] (https://trello.com/b/91yjEezy/dont-panic)
+[Project Trello Board](https://trello.com/b/91yjEezy/dont-panic)
 
 # 2. Implemented Requirements  
 Collectively, team members put roughly 85 man-hours into this week’s deliverable.
