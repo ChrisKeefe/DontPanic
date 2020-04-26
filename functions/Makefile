@@ -13,3 +13,6 @@ test: all
 test-cov: all
 	py.test --cov
 	# coverage run --source test_cloud_functions.py -m py.test
+
+test-cov-lines: all
+	pytest --cov-report term-missing --cov=functions test_cloud_functions.py

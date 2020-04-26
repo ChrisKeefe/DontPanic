@@ -49,10 +49,12 @@ https://jsonformatter.curiousconcept.com/
 
 
 ########## working in create_user():
+curl -i -X POST -H 'Content-type: application/json' -d '{"userPayload":{"userID":"c2AgcDSh0fd:APA91bHu02","userName":"Drewsuf Islam","phoneNum":"8675309","profiles":["profileID1","profileID2"]}}' https://us-central1-dontpanicfbase.cloudfunctions.net/create_user
+
 {
-  "messagePayload":{
+  "userPayload":{
     "userID":"c2AgcDSh0fc:APA91bHu02",
-    "userName":"Don Giovanni",
+    "userName":"Drewsuf Islam",
     "phoneNum":"8675309",
     "profiles":[
       "profileID1",
@@ -61,4 +63,4 @@ https://jsonformatter.curiousconcept.com/
   }
 }
 
-{"messagePayload":{"userID":"c2AgcDSh0fc:APA91bHu02","userName":"Don Giovanni","phoneNum":"8675309","profiles":["profileID1","profileID2"]}}
+{"userPayload":{"userID":"c2AgcDSh0fc:APA91bHu02","userName":"Drewsuf Islam","phoneNum":"8675309","profiles":["profileID1","profileID2"]}}

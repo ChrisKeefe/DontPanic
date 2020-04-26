@@ -1,8 +1,4 @@
 from google.cloud import firestore
-# from firebase_admin import messaging
-# from flask import escape
-
-# ################### Public-Facing API functions ###########################
 
 
 def create_message(request):
@@ -26,6 +22,7 @@ def create_message(request):
     """
     import uuid
     db = firestore.Client()
+    postFlag = ""
     # TODO: sanitize inputs
 
     # get_json gets a json object if exists, else returns None
@@ -34,8 +31,10 @@ def create_message(request):
     request_args = request.args
     if request_json and 'messagePayload' in request_json:
         payload = request_json['messagePayload']
+        postFlag = "POST"
     elif request_args and 'messagePayload' in request_args:
         payload = request_args['messagePayload']
+        postFlag = "GET"
     else:
         return "Failure: invalid payload"
 
@@ -57,7 +56,7 @@ def create_message(request):
     message_ID = uuid.uuid4()
     # Add a new doc in collection 'messages' with randomly-generated ID
     db.collection(u'messages').document(str(message_ID)).set(data)
-    return "Request successful: Message added to DB"
+    return f"Request successful: Message added to DB via {postFlag}"
 
 
 def create_profile(request):
@@ -85,6 +84,7 @@ def create_profile(request):
     """
     import uuid
     db = firestore.Client()
+    postFlag = ""
 
     # get_json gets a json object if exists, else returns None
     request_json = request.get_json(silent=True)
@@ -92,8 +92,10 @@ def create_profile(request):
     request_args = request.args
     if request_json and 'profilePayload' in request_json:
         payload = request_json['profilePayload']
+        postFlag = "POST"
     elif request_args and 'profilePayload' in request_args:
         payload = request_args['profilePayload']
+        postFlag = "GET"
     else:
         return "Failure: invalid payload"
 
@@ -117,6 +119,7 @@ def create_profile(request):
     profile_ID = uuid.uuid4()
     # Add a new doc in collection 'messages' with randomly-generated ID
     db.collection(u'profiles').document(str(profile_ID)).set(data)
+    return f"Request successful: Profile added to DB via {postFlag}"
 
 
 def create_user(request):
@@ -125,7 +128,7 @@ def create_user(request):
     Preconditions: receives a POST request of content-type 'application/json'
         format:
         {
-          "messagePayload":{
+          "userPayload":{
               "userID":"STR",
               "userName":"STR",
               "phoneNum":"INT",
@@ -140,15 +143,19 @@ def create_user(request):
     TODO: get existing user profiles, append them to this req for idempotence
     """
     db = firestore.Client()
+    postFlag = ""
 
     # get_json gets a json object if exists, else returns None
     request_json = request.get_json(silent=True)
     # args is a multidict, which can be indexed like request_args[key]
     request_args = request.args
-    if request_json and 'messagePayload' in request_json:
-        payload = request_json['messagePayload']
-    elif request_args and 'messagePayload' in request_args:
-        payload = request_args['messagePayload']
+
+    if request_json and 'userPayload' in request_json:
+        payload = request_json['userPayload']
+        postFlag = "POST"
+    elif request_args and 'userPayload' in request_args:
+        payload = request_args['userPayload']
+        postFlag = "GET"
     else:
         return "Failure: invalid payload"
 
@@ -164,3 +171,4 @@ def create_user(request):
     }
     # Add a new doc in collection 'users' with userID as doc name
     db.collection(u'users').document(str(userID)).set(data)
+    return f"Request successful: User added to DB via {postFlag}"
