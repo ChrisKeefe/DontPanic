@@ -57,6 +57,7 @@ def create_message(request):
     message_ID = uuid.uuid4()
     # Add a new doc in collection 'messages' with randomly-generated ID
     db.collection(u'messages').document(str(message_ID)).set(data)
+    return "Request successful: Message added to DB"
 
 
 def create_profile(request):
