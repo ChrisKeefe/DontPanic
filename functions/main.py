@@ -1,6 +1,6 @@
 from google.cloud import firestore
-from firebase_admin import messaging
-from flask import escape
+# from firebase_admin import messaging
+# from flask import escape
 
 # ################### Public-Facing API functions ###########################
 
@@ -163,98 +163,3 @@ def create_user(request):
     }
     # Add a new doc in collection 'users' with userID as doc name
     db.collection(u'users').document(str(userID)).set(data)
-
-
-def send_message_to_one_user(request):
-    # This registration token comes from the client FCM SDKs.
-    registration_token = 'd5ITFKJ6Tm6KvoaIJ8IVQf:APA91bFizkGRIeA3OGKNHS6LK3nhTllG46voqXR0NtBtXlGvV6AAkZZMwkgqW7ZrXHBxORLzTBZRWRoFJ17ciLBU_AWoWRY2AoNlgcwSXQwR64BIcEjYrgG4eV5c16ksz-p8sGBqxM6v'
-
-    # See documentation on defining a message payload.
-    message = messaging.Message(
-        notification={
-            'title': 'A message...',
-            'body': 'Wooohoooooo!',
-        },
-        token=registration_token,
-    )
-
-    # Send a message to the device corresponding to the provided
-    # registration token.
-    response = messaging.send(message)
-    # Response is a message ID string.
-    print('Successfully sent message:', response)
-
-
-
-# ####################### TO-DO List ######################################
-# TODO: Updating messages or profiles will require us to get the record,
-# get existing tags, set() those tags, add the new ones, and then create the
-# record passing the recordID explicitly
-
-# TODO: Mason - create a function that sends a simple text message to our app
-
-# TODO: create a function that listens to the firestore db and
-# modifies the LA document once it's been created
-
-# TODO: create a function that listens to the firestore db
-# and calls add_from_dict with data so that it creates a new document for NYC
-
-
-# ##################### SAMPLE FUNCTIONS ####################################
-# HTTP functions like this must have (request) as a parameter, as they are
-# triggered by HTTP get/post/etc requests. In this example, the branching logic
-# allows this function to handle JSON inputs through POST, GET requests that
-# that offer a "name" argument, and requests with no argument
-
-
-def hello_http(request):
-    """HTTP Cloud Function.
-    Args:
-        request (flask.Request): The request object.
-        <http://flask.pocoo.org/docs/1.0/api/#flask.Request>
-    Returns:
-        The response text, or any set of values that can be turned into a
-        Response object using `make_response`
-        <http://flask.pocoo.org/docs/1.0/api/#flask.Flask.make_response>.
-    Usage: passing a name as follows will yield Hello Name!
-    https://GCP_REGION-PROJECT_ID.cloudfunctions.net/hello_http?name=NAME
-    """
-    request_json = request.get_json(silent=True)
-    request_args = request.args
-
-    if request_json and 'name' in request_json:
-        name = request_json['name']
-    elif request_args and 'name' in request_args:
-        name = request_args['name']
-    else:
-        name = 'World'
-    return 'Hello {}!'.format(escape(name))
-
-
-# we can use publishers and subscribers to chain multiple cloud functions
-# e.g. one function publishes to a channel. other functions which subscribe to
-# that channel run in turn
-# see: https://cloud.google.com/functions/docs/calling/pubsub
-# and: https://cloud.google.com/functions/docs/tutorials/pubsub
-
-
-def hello_pubsub(event, context):
-    """Background Cloud Function to be triggered by Pub/Sub.
-    Args:
-         event (dict):  The dictionary with data specific to this type of
-         event. The `data` field contains the PubsubMessage message. The
-         `attributes` field will contain custom attributes if there are any.
-         context (google.cloud.functions.Context): The Cloud Functions event
-         metadata. The `event_id` field contains the Pub/Sub message ID. The
-         `timestamp` field contains the publish time.
-    """
-    import base64
-
-    print("""This Function was triggered by messageId {} published at {}
-    """.format(context.event_id, context.timestamp))
-
-    if 'data' in event:
-        name = base64.b64decode(event['data']).decode('utf-8')
-    else:
-        name = 'World'
-    print('Hello {}!'.format(name))

@@ -39,5 +39,6 @@ class CreateMessageTests(unittest.TestCase):
     def div_z(self, some_number):
         return some_number / 0
 
+
 if __name__ == '__main__':
     unittest.main()

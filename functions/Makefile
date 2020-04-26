@@ -2,12 +2,12 @@
 
 all: ;
 
-lint: 
+lint:
 	flake8 main.py test_cloud_functions.py
 
 test: all
-#	py.test
-	python -m unittest -v test_cloud_functions.py
+	py.test -v
+#	python -m unittest -v test_cloud_functions.py
 
 test-cov: all
 	py.test --cov
