@@ -27,10 +27,10 @@ class CreateMessageTests(unittest.TestCase):
         """tests the ablility to receive messagePayload in NON-JSON form
         create mock variable"""
         # TODO: swap out JSON payload for args
-        req = Mock(get_json=Mock(return_value=self.ok_JSON),
+        req = Mock(get_json=Mock(return_value=None),
                    args=self.ok_JSON)
         assert self.on_add_string in create_message(req) and \
-            "POST" in create_message(req)
+            "GET" in create_message(req)
 
     def test_bad_payload(self):
         """ confirms that function errors on malformed payload """
@@ -63,10 +63,10 @@ class CreateProfileTests(unittest.TestCase):
         """tests the ablility to receive messagePayload in NON-JSON form
         create mock variable"""
         # TODO: swap out JSON payload for args
-        req = Mock(get_json=Mock(return_value=self.ok_JSON),
+        req = Mock(get_json=Mock(return_value=None),
                    args=self.ok_JSON)
         assert self.on_add_string in create_profile(req) and \
-            "POST" in create_profile(req)
+            "GET" in create_profile(req)
 
     def test_bad_payload(self):
         """ confirms that function errors on malformed payload """
@@ -99,11 +99,10 @@ class CreateUserTest(unittest.TestCase):
     def test_receiving_args(self):
         """tests the ablility to receive messagePayload in NON-JSON form
         create mock variable"""
-        # TODO: swap out JSON payload for args
-        req = Mock(get_json=Mock(return_value=self.ok_JSON),
+        req = Mock(get_json=Mock(return_value=None),
                    args=self.ok_JSON)
         assert self.on_add_string in create_user(req) and \
-            "POST" in create_user(req)
+            "GET" in create_user(req)
 
     def test_bad_payload(self):
         """ confirms that function errors on malformed payload """
