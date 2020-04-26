@@ -1,6 +1,6 @@
 import unittest
 from .main import (create_message, create_profile, create_user)
-# import unittest.mock as mock
+import unittest.mock as mock
 
 
 class CreateMessageTests(unittest.TestCase):
@@ -8,6 +8,7 @@ class CreateMessageTests(unittest.TestCase):
         # Declare test data variables here
         self.expected_int = 5
         self.expected_string = "This is a test message"
+        # self.bad_request = "This is not a JSON request"
 
     def test_receiving_json(self):
         # tests the ablility to receive messagePayload in JSON form
@@ -20,9 +21,11 @@ class CreateMessageTests(unittest.TestCase):
         pass
 
     def test_bad_payload(self):
-        # tests the ablility to receive messagePayload in NON-JSON form
-        # create mock variable
-        pass
+        """ confirms that function errors on malformed payload """
+        data = '{"malformed payload": some junk}'
+        req = mock.Mock(get_json=mock.Mock(return_value=data), args=data)
+
+        assert create_message(req) == 'Failure: invalid payload'
 
 # #################### dummy tests ###################################
 

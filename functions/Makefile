@@ -1,6 +1,7 @@
 .PHONY: test lint test test-cov
 
-all: ;
+all: 
+	export GOOGLE_APPLICATION_CREDENTIALS="dont-panic-auff-kee.json"
 
 lint:
 	flake8 main.py test_cloud_functions.py
