@@ -44,11 +44,19 @@ If we had been able to conduct integration testing, our approach would closely m
 No print screen available. Sorry!
 
 ## 2.3 Acceptance  
-Insert test results here.
+We were unable to get any acceptance testing done. Besides the interfaces we built, we can't test other functions the user can use. Like we stated in 2.2, we were unable to get our components to work with each other, which impedes our ability to do integration and acceptance testing.
+
 ### 2.3.1
+We would conduct our acceptance testing using the Selenium testing framework. It seems to be well documented and can do simple accpetance testing with it
+
 ### 2.3.2
+Because we could not integrate Acceptance testing, we have no Github folder for it
+
 ### 2.3.3
-### 2.3.4
+If we had been able to conduct acceptance testing, our approach would be similar to our unit testing, but would do so from the javascript webform.
+
+### 2.3.4 
+No print screen available. Sorry!
 
 # Validation (User Evaluation)  
 
