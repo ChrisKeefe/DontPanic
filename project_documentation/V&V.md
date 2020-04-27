@@ -12,15 +12,36 @@ Our Android app is available to select users/developers for pre-alpha testing. T
 
 # Verification (tests)  
 ## Unit test
-We chose to use python’s unittest framework, because it is a standard library package, relatively simple, and ships with robust testing tools, including tooling for mocks. It is, however, very ugly, and does not include coverage testing, so are using the pytest library as a test runner (for pretty outputs), and the pytest-cov library for coverage.  
+### 2.1.1
+We chose to use python’s unittest framework, because it is a standard library package, relatively simple, and ships with robust testing tools, including tooling for mocks. It is, however, very ugly, and does not include coverage testing, so we are using the pytest library as a test runner (for pretty outputs), and the pytest-cov library for coverage. Our test assertions are built using the cleaner pytest syntax.
 
-Tests are housed in test_cloud_functions.py in our cloud functions directory.  
+### 2.1.2
+Tests are housed in test_cloud_functions.py in our [cloud functions directory.](https://github.com/ChrisKeefe/DontPanic/tree/master/functions)
 
-## Integration Test  
+### 2.1.3
+[CreateMessageTests.test_receiving_json()](https://github.com/ChrisKeefe/DontPanic/blob/1b4cee8486287a2850ca8eb8f3992c22f76fb4f9/functions/test_cloud_functions.py#L18) mocks a POST request object with a JSON payload of valid data. It tests that the JSON-parsing logic of our create_message() cloud function is working properly. Whenever our test suite calls the test, it actuates the cloud function by POST request, creating a new test record in our Firestore Realtime Database, and returning a POST-specific success message. We use a simple regex-like test to confirm we have received the correct success message as a response.
+
+### 2.1.4
+#### Test successes and coverage reporting:
+![test_successes]()
+
+#### Messages created in our RealtimeDB during unit testing:
+![test_messages]()
+
+## 2.2 Integration Test  
 Insert test results here.  
 
-## Acceptance  
-Insert test results here.   
+### 2.2.1
+### 2.2.2
+### 2.2.3
+### 2.2.4
+
+## 2.3 Acceptance  
+Insert test results here.
+### 2.3.1
+### 2.3.2
+### 2.3.3
+### 2.3.4
 
 # Validation (User Evaluation)  
 Insert test results here.  
@@ -109,9 +130,16 @@ Insert test results here.
 	- It looks like it needs more to be a finished product
 - Could you give an overall score (1-10)?
 - Why did you give it this score?
-	- 5 - It does what it is supposed to, but probably needs more. And could probably look a little more polished    
+	- 5 - It does what it is supposed to, but probably needs more. And could probably look a little more polished
 
 ## Reflections:  
 
 **Madisen:**  
 From the answers we received from Madisen, we realized how much an attractive design can impact a first impression. Her initial thoughts on both the web form and the mobile app were both about appearance. The more she looked at it, the more she say the functionality and the simplicity, but we didn't spend much time on design and that showed for her.
+
+
+**April:**  
+
+**TODO:**  
+
+**Overall:**
