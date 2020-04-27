@@ -26,7 +26,6 @@ class CreateMessageTests(unittest.TestCase):
     def test_receiving_args(self):
         """tests the ablility to receive messagePayload in NON-JSON form
         create mock variable"""
-        # TODO: swap out JSON payload for args
         req = Mock(get_json=Mock(return_value=None),
                    args=self.ok_JSON)
         assert self.on_add_string in create_message(req) and \
@@ -62,7 +61,6 @@ class CreateProfileTests(unittest.TestCase):
     def test_receiving_args(self):
         """tests the ablility to receive messagePayload in NON-JSON form
         create mock variable"""
-        # TODO: swap out JSON payload for args
         req = Mock(get_json=Mock(return_value=None),
                    args=self.ok_JSON)
         assert self.on_add_string in create_profile(req) and \
