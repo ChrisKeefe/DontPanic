@@ -23,18 +23,25 @@ Tests are housed in test_cloud_functions.py in our [cloud functions directory.](
 
 ### 2.1.4
 #### Test successes and coverage reporting:
-![test_successes]()
+![test_successes](https://github.com/ChrisKeefe/DontPanic/blob/master/project_documentation/deliverable_media/tests_passing_full_cov.png)
 
 #### Messages created in our RealtimeDB during unit testing:
-![test_messages]()
+![test_messages](https://github.com/ChrisKeefe/DontPanic/blob/master/project_documentation/deliverable_media/messages_generated_by_testing.png)
 
 ## 2.2 Integration Test  
-Insert test results here.  
+Our application is built on a new-to-us serverless platform, which has thrown us some real curveballs. During development for D6, we were unable to get either our App or Webform to send HTTP requests to our GCF API, though the API readily accepted requests sent through a browser or via curl. After putting six more hours into attempting to wire the web form up this week, we were able to diagnose the problem, but were unable to fix it. Trello has been updated to note the work required. Without any two apps integrated successfully, we have been unable to conduct integration testing, but will speculate on how that might work.
 
 ### 2.2.1
+We would conduct our integration testing using the Mocha test framework - it is well-documented and has approachable syntax, and would allow us to test the integration between our webform (written in node.js) and the cloud functions API.
+
 ### 2.2.2
+As noted above, we were unable to conduct integration testing, with no integrated application components.
+
 ### 2.2.3
+If we had been able to conduct integration testing, our approach would closely mirror the unit testing performed in 2.1, but would do so from the javascript webform. The webform would trigger requests to each cloud function, providing JSON data that is a)well-formed and complete, b)incomplete but well-formed, c) malformed, and would test whether the results matched the expected responses.
+
 ### 2.2.4
+No print screen available. Sorry!
 
 ## 2.3 Acceptance  
 Insert test results here.
@@ -44,7 +51,6 @@ Insert test results here.
 ### 2.3.4
 
 # Validation (User Evaluation)  
-Insert test results here.  
 
 ## Script  
 **General questions about the webpage**  
