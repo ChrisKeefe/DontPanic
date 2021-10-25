@@ -1,3 +1,9 @@
+# ARCHIVED AS INCOMPLETE
+Don't Panic has been shelved and is unlikely to see further development.
+The existing codebase, with limited functionality, remains available under an MIT license.
+Feel free to fork and carry on as you see fit,
+but contributions to this project will not be supported.
+
 # Contributing
 
 When contributing to this repository, please first discuss the change you wish to make via issue,

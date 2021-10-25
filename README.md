@@ -1,3 +1,8 @@
+# ARCHIVED AS INCOMPLETE
+Don't Panic has been shelved and is unlikely to see further development.
+The existing codebase, with limited functionality, remains available under an MIT license.
+Please proceed at your own risk.
+
 # Don't Panic
 Don't Panic is a simple, lightweight notifications platform, offering users geo-targeted and personalized notifications helping them navigate real-world challenges.
 
